@@ -4,6 +4,7 @@ Full Stack web application for managing travel guides. Developed with PHP, JQuer
 Done as a school project.
 Author: Karel Haapasalo
 
+Screenshot from application's members page
 ![image](https://user-images.githubusercontent.com/49402752/116090694-d00c8800-a6ac-11eb-875d-67abdf854cab.png)
 
 # [Start Bootstrap - Scrolling Nav](https://startbootstrap.com/template-overviews/scrolling-nav/)
