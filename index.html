@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="images/favicon.ico">
+
+  <title>Inter Nordic Guide Club</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+  <!-- Own styles-->
+  <link rel="stylesheet" type="text/css" href="css/oma.css">
+
+</head>
+
+<body id="page-top" class="bg-dark">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top" id="mainNav" 
+  style="-webkit-box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.75);">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img class="igclogo" src="images/igclogo.jpg"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" 
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <span id="userTag" style="color:white" data-toggle="modal" data-target="#owninfo"></span><!--Kirjautuneen käyttäjän nimi-->
+      <span id="adminTag" style="color:white"></span>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+           <li class="nav-item" id="liHome">
+              <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item" id="liMember">
+            <a class="nav-link" href="#" id="liMemberLink" style="display: none;">Members</a>
+          </li>
+          <li class="nav-item" id="liSoc">
+            <a class="nav-link" href="#" id="liSocLink" style="display: none;">Societies</a>
+          </li>
+          <li class="nav-item" id="liLoggedOut">
+            <a class="nav-link" href="#" id="LoggedOutSocLink">Societies</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+          <span id="registerbutton">
+              <button class="btn btn-outline-light my-2 my-sm-0" type="button"
+               data-toggle="modal" data-target="#">Register</button></a>
+            </span>
+          <span id="loginbutton">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="button"
+             data-toggle="modal" data-target="#loginfrm">Login</button></a>
+          </span>
+          <span id="logoutbutton">
+            <button id="logoutbtn" class="btn btn-outline-light my-2 my-sm-0" type="button">Logout</button></a>
+          </span>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" style="display:none; margin-left:5px;" type="text" placeholder="Search societies" aria-label="Search" id="SearchSoc">
+          <input class="form-control mr-sm-2" style="display:none; margin-left:5px;" type="text" placeholder="Search members" aria-label="Search" id="SearchMemb">
+        </form>
+    </div>
+    </div>
+  </nav>
+  <!--Nav ends-->
+
+  <!--Page content-->
+    <section id="about">   
+  
+    <div class="container bg-secondary" style="-webkit-box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.75); padding-bottom: 300px; padding-top:30px;">
+        <div id="result" class="float-right"></div>
+        <div id="result2" class="float-right"></div>
+        <h1 class="text-white">Inter Nordic Guide Club</h1>
+        <div id="buttons"></div>
+        <br><br>  
+        
+      <div id="resultContent" class="text-white">
+        </div>
+
+        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+          </ul>
+          <div class="carousel-inner" id="carouselImages"></div>
+
+        </div>
+
+
+      <!--<div id="slideshow" style="display:none;"></div>-->
+    </div>
+ 
+  <!--Footer-->
+  <div class="container text-center bg-info" style="-webkit-box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 25px -6px rgba(0,0,0,0.75); padding:30px;">
+      <div id="editFrontpageBtn" style="display:none;">
+      <p><button class="btn btn-dark" data-toggle="modal" data-target="#editFrontpage">Edit Frontpage</button></p>
+      </div>
+      <div id="editCarouselBtn" style="display:none;">
+        <p><button class="btn btn-dark">Images</button></p>
+        </div>
+      <p class="m-0 text-center text-white">Copyright &copy; Inter Nordic Guide Club 2019</p>
+    </div>
+
+
+    <!--MODAL PARTS HERE-->
+    
+	<!--loginfrm starts-->
+	<div id="loginfrm" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+     <div class="modal-header bg-dark text-white">
+       <h3 class="modal-title">Login</h3>
+       <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+     </div>
+     <div class="modal-body">
+      <form class="form-signin" id="frmlogin">
+       Email: <input class="form-control" type="email" id="email"   placeholder="Email" required >
+       Password: <input class="form-control" type="password" id="password"  placeholder="Password" required >
+       <br>
+       <input class="btn btn-dark btn-block" type="submit" id="loginbtn" value="Login" >
+       <br>
+
+      </form>
+      <div id="logininfo" class="float-right"></div><!--Näytetään kirjautumisen virheilmoituksia tai ok-->
+       </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     </div>
+     </div>
+    </div>
+   </div>
+   <!--loginfrm ends-->
+
+   	<!--delmember starts-->
+	<div id="delMemberModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content text-center">
+       <p><h3>Are you sure?</h3></p>
+     <div class="modal-body">
+     <p><span id="delButtonHere"></span>
+      <span><button class="btn btn-info" data-dismiss="modal">Cancel</button></span>
+    </p>
+      <div id="delMemberInfo" class="float-right"></div>
+       </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     </div>
+     </div>
+    </div>
+   </div>
+   <!--delmember form ends-->
+
+   <!--Own info form-->
+   <div id="owninfo" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+     <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+       <h3 class="modal-title">User Information</h3>
+       <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+     <div class="row">
+       <div class="col-sm-4">
+         <h4>User information</h4>
+         <form id="ownInfoFrm">
+           <div class="form-group">
+             <label for="firstname">Firstname:</label>
+             <input type="text" class="form-control" id="firstname" required />
+           </div>
+           <div class="form-group">
+             <label for="lastname">Lastname:</label>
+             <input type="text" class="form-control" id="lastname" required />
+           </div>
+           <div class="form-group">
+             <label for="ownemail">Email:</label>
+             <input type="email" class="form-control" id="ownemail" required />
+           </div>
+           <div class="form-group">
+              <label for="birthdate">Date of birth:</label>
+              <input type="date" class="form-control" id="birthdate" />
+           </div>
+           <div class="form-group">
+              <label for="streetaddress">Street address:</label>
+              <input type="text" class="form-control" id="streetaddress" />
+           </div>
+        </div>
+        <div class="col-sm-4">
+           <div class="form-group">
+              <label for="postalcode">Postal code:</label>
+              <input type="text" class="form-control" id="postalcode" />
+           </div>
+           <div class="form-group">
+              <label for="city">City:</label>
+              <input type="text" class="form-control" id="city" />
+           </div>
+           <div class="form-group">
+              <label for="country">Country:</label>
+              <input type="text" class="form-control" id="country" />
+           </div>
+           <div class="form-group">
+              <label for="mobile">Mobile:</label>
+              <input type="text" class="form-control" id="mobile" />
+           </div>
+           <div class="form-group">
+            <label for="skills">Language skills:</label>
+            <input type="text" class="form-control" id="skills" />
+         </div>
+           <button type="submit" class="btn btn-dark btn-block" style="margin-bottom: 10px;">Update</button>
+         </form>
+         <div id="ownInfo"></div>
+       </div>
+       <div class="col-sm-4">
+         <h4>Change password</h4>
+         <form id="updatePasswordFrm">
+           <div class="form-group">
+             <label for="oldPassword">Current password:</label>
+             <input type="password" class="form-control" id="oldPassword" required />
+           </div>
+           <div class="form-group">
+             <label for="newPassword">New password:</label>
+             <input type="password" class="form-control" id="newPassword" required />
+           </div>
+           <div class="form-group">
+             <label for="confirmPassowrd">Confirm password:</label>
+             <input type="password" class="form-control" id="confirmPassword" required />
+           </div>
+           <button type="submit" class="btn btn-dark btn-block">Update</button>
+         </form>
+         <p>&nbsp;</p>
+         <div id="passwordInfo"></div>
+       </div>
+     </div>
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!--Own info form ends-->
+
+   	<!--Editmember modal-->
+	<div id="editMember" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+       <h3 class="modal-title">Edit member information</h3>
+       <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+       <div class="col-sm-6" id="hideCol">
+         <h3>Basic Information</h3>
+         <form id="memberInfosForm">
+           <input type="hidden" id="userID" value="" />
+           <div class="form-group">
+             <label for="userFName">Firstname:</label>
+             <input type="text" class="form-control" id="userFName" required />
+           </div>
+           <div class="form-group">
+             <label for="userLastname">Lastname:</label>
+             <input type="text" class="form-control" id="userLastname" required />
+           </div>
+           <div class="form-group">
+             <label for="dateofBirth">Birthdate:</label>
+             <input type="date" class="form-control" id="dateofBirth" />
+           </div>
+           <div class="form-group">
+             <label for="userEmail">Email:</label>
+             <input type="email" class="form-control" id="userEmail" required />
+           </div>
+           <div class="form-group">
+             <label for="userRole">Role:</label>
+             <select class="form-control" id="userRole">
+               <option value="member">Member</option>
+               <option value="admin">Admin</option>
+             </select>
+             
+           </div>
+           <button type="submit" class="btn btn-dark">Update</button>
+         </form><br>
+         <div id="memberUpdateInfo"></div>
+       </div>
+       <div class="col-sm-6">
+         <h3>Profilepicture</h3>
+         <div class="card" style="width:200px">
+           <img class="card-img-top" src="images/avatar.png" alt="" id="memberImg">
+         </div>
+         <form id="memberImgFrm" enctype="multipart/form-data">
+           <input type="hidden" id="memberIDimg" value="" />
+           <div class="form-group">
+             <label for="memberImgFile">Profilepicture:</label>
+             <input type="file" class="form-control" id="memberImgFile" required />
+           </div>
+           <button type="submit" class="btn btn-dark">Update</button>
+           <br><br>
+           <p id="imggone"></p>
+         </form><br>
+         <div id="imgUpdateInfo"></div>
+       </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+     </div>
+   </div>
+   </div>
+   <!--Editmember modal ends-->
+
+   <!--addSociety modaali starts-->
+	<div id="addSociety" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+       <h3 class="modal-title">Add society</h3>
+       <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+         <form id="SocietyFrm">
+           <div class="form-group">
+             <label for="societyname">Society name:</label>
+             <input type="text" class="form-control" id="societyname" required />
+           </div>
+           <div class="form-group">
+             <label for="societyplace">Place:</label>
+             <input type="text" class="form-control" id="societyplace" required />
+           </div>
+           <div class="form-group">
+            <label for="societycountry">Country:</label>
+            <input type="text" class="form-control" id="societycountry" required />
+          </div>
+           <div class="form-group">
+             <label for="societydesc">Description:</label>
+             <textarea class="form-control" id="societydesc"></textarea>
+           </div>
+           <button type="submit" class="btn btn-dark">Save</button>
+         </form>
+         <p></p>
+         <div id="societyFrmInfo" class="float-right"></div>
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+     </div>
+   </div>
+   </div>
+   <!--addSociety modal ends-->
+
+    <!--EditSociety modaali starts-->
+	<div id="editSociety" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+       <h3 class="modal-title">Edit society</h3>
+       <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+         <form id="EditSocietyFrm">
+            <input type="hidden" id="EditsocietyID" value="" />
+           <div class="form-group">
+             <label for="Editsocietyname">Society name:</label>
+             <input type="text" class="form-control" id="Editsocietyname" required />
+           </div>
+           <div class="form-group">
+             <label for="Editsocietyplace">Place:</label>
+             <input type="text" class="form-control" id="Editsocietyplace" required />
+           </div>
+           <div class="form-group">
+            <label for="Editsocietycountry">Country:</label>
+            <input type="text" class="form-control" id="Editsocietycountry" required />
+          </div>
+           <div class="form-group">
+             <label for="Editsocietydesc">Description:</label>
+             <textarea class="form-control" id="Editsocietydesc"></textarea>
+           </div>
+           <button type="submit" class="btn btn-dark">Save</button>
+         </form>
+         <p></p>
+         <div id="EditsocietyFrmInfo" class="float-right"></div>
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+     </div>
+   </div>
+   </div>
+   <!--EditSociety modal ends-->
+
+   <!--EditFrontpage modal starts-->
+   <div id="editFrontpage" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+         <h3 class="modal-title">Edit Frontpage</h3>
+         <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+           <form id="EditFrontpageFrm">
+             <div class="form-group">
+               <label for="textbox">Text:</label>
+               <textarea class="form-control" id="textbox"></textarea>
+             </div>
+             <button type="submit" class="btn btn-dark">Update</button>
+           </form>
+           <p></p>
+          <div id="timestamp"></div>
+           <div id="editFrontpageInfo"></div>
+        </div>
+        <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+     </div>
+     </div>
+   <!--EditFrontpage modal ends-->
+
+   <!--MODAL PARTS END-->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+  <!-- Own JavaScript-->
+  <script src="js/oma.js"></script>
+
+  <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=9ozj25mmzny61s54de0axz64dh97nseimwj0io8jb0272d6x"></script>
+  <script>tinymce.init({
+      selector: '#textbox',  // change this value according to your HTML
+      plugin: 'a_tinymce_plugin',
+      a_plugin_option: true,
+      a_configuration_option: 400,
+      height: 300,
+    });</script>
+
+</body>
+
+</html>

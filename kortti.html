@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>IGC Nordic Guide Club</title>
+
+	<!--CARD STYLES-->
+	<link href="css/korttityyli.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500" rel="stylesheet">
+	
+  </head>
+  <body>
+	<main role="main" class="container">
+   <h3>Membercard</h3>
+   <span><a class="btn btn-info" href="#" onClick="window.close()">Close</a></span>
+	<p></p>
+		<!--CARD HERE-->
+
+<div class="card">
+   <div class="card-avatar">
+	  <img class="img-fluid" src="images/igclogo.jpg" width="150px" style="max-height:200px;"/>
+      <img id="img" class="img-fluid" src="images/avatar.png" width="150px" style="max-height:200px;" alt="">
+   </div>
+   <div class="card-details">
+      <div class="name" id="name"></div>
+      <div class="occupation" id="email" style="color:rgb(23, 161, 185);"></div>
+      
+      <div class="card-about">
+         <div class="item">
+               <span class="label">Country</span>
+            <span class="value" id="cardcountry" style="color:rgb(23, 161, 185);"></span>
+         </div>
+         <div class="item">
+            <span class="label">City</span>
+            <span class="value" id="cardplace" style="color:rgb(23, 161, 185);"></span> 
+         </div>
+      </div>
+      <div class="skills">
+         <span class="value" id="barcode" ></span>
+      </div>
+   </div>
+</div>
+		<!--CARD ENDS-->
+
+
+	</main>
+	<!--<script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>-->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!--Barcode JQuery-->
+  <script src="js/jquery-barcode.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+  <script src="js/kortti.js"></script>
+
+  </body>
+</html>

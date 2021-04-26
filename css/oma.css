@@ -1,0 +1,28 @@
+/* 
+    file: css/oma.css
+    date: 25.4.2019
+    auth: Karel H
+    desc: Tässä voit yliajaa jo valmiita bootstrap tyylejä tai luoda omia.
+*/
+
+.igclogo {
+    max-width: 120px;
+    margin: 0px;
+}
+ /*
+.jumbotron {
+   margin-top: 70px !important;
+    background-image: url("../images/header.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+*/
+/*
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999 !important;
+    -moz-box-shadow: 0 8px 6px -6px #999 !important;
+    box-shadow: 0 8px 6px -6px #999 !important;
+}
+*/
